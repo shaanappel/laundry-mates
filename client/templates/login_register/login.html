@@ -1,0 +1,23 @@
+<template name="login">
+	<form class="form-signin">
+        <h2 class="form-signin-heading">Login</h2>
+        <p id="form-login-subheading">or <a href="/register">Sign Up</a></p>
+
+        <label for="email" class="sr-only">Email address</label>
+
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+         <p id="form-login-forgot-password"><a href="/forgot">Forgot Password?</a></p>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me" checked> Remember me
+            </label>
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <br>
+        
+      </form>
+</template>

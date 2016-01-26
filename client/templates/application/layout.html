@@ -1,0 +1,18 @@
+<template name="layout">
+  <div>navbar</div>
+  {{> navbar}}
+  <div> the navbar is above me! </div>
+  <div class="container">
+      <div id="wrapper">
+        <div class="row marketing" id="right">
+          <div class="col-lg-12">
+            {{> flashMessages}}
+            {{> yield}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </template>
+
+

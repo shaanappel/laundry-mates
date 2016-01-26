@@ -1,0 +1,12 @@
+<body id="form_layout">
+{{renderPage}}
+</body>
+
+<template name="form_layout">
+  
+  <div> Login layout screen </div>
+  <div class="container">
+    {{> flashMessages}}
+    {{> yield}}     
+  </div>
+</template>

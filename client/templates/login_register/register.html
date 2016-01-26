@@ -1,0 +1,35 @@
+<template name="register">
+	<form class="form-signup">
+        <h2 class="form-signup-heading">Create An Account</h2>
+        <br>
+        <p>Have An Account? <a href="/">Log In</a></p>
+        <label for="first_name" class="sr-only">First Name</label>
+        <input type="text" id="first_name" name="first_name" class="form-control" placeholder="First name" required autofocus>
+        <label for="last_name" class="sr-only">Last Name</label>
+        <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Last name" required autofocus>
+        <label for="email" class="sr-only">Email Address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+        <label for="password2" class="sr-only">Password Confirm</label>
+        <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" required>
+        <br>
+        <p class='text-left'>Optional:</p>
+        <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone (in case you get lost)" >
+        <select id="primary_chapter" name="primary_chapter" class="form-control" placeholder="Select a Primary Chapter"> 
+        {{#each allChapters}}
+            <option value= {{name}}>{{spaced_name}}</option> 
+        {{/each}}
+        </select>
+        <br>
+        <input type="checkbox" name="remember_me" value="True">  Remember Me
+        <br>
+        <input type="checkbox" name="tlmonthlynews" id="tlmonthlynews" value="True" checked>  Sign me up for Thought Lounge Monthly Newsletter
+        <p>By signing up, I agree to Thought Lounge's <a href="/terms_of_service">terms of service</a></p>
+
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        
+      </form>
+</template>
