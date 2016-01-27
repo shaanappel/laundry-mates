@@ -40,13 +40,7 @@ Template.register.events({
 				if(err){
 					FlashMessages.sendError('There was an error with registration');
 				} else {
-					if (Session.get('Route') == '/doatl') {
-						Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.primary_chapter': Session.get('selectedChapter') }} );
-						Session.set('Route', '/my-upcoming-lounges');
-						Router.go('/doatl');
-					} else {
-						Router.go('/my-upcoming-lounges');
-					}
+					Router.go('/dashboard')
 				}
 			});
 
@@ -56,18 +50,6 @@ Template.register.events({
 			      action: 'subscribe'
 			    });
 			}
-
-			var data = {
-				first_name: 'New Lounger'
-			}
-		    var to = email;
-		    var subject = "Welcome to Thought Lounge! You just created your profile.";
-		    var temp_name = 'welcomeEmail';
-		    var file_name = 'welcome.html';
-
-		    Meteor.call('sendEmail', to, subject, data, temp_name, file_name);
-		    console.log('sent')
-
 		}
 
 

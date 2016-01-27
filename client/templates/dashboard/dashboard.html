@@ -1,8 +1,17 @@
 <template name="dashboard">
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div> This is the dashboard </div>
-  </template>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h2>Dashboard</h2>
+	<br>
+	<div>
+		{{#if are_pending_orders}}
+			{{#each pending_orders}}
+				{{> pending_order}}
+			{{/each}}
+		{{else}}
+			<button class="order"> Place an Order </button>
+		{{/if}}
+	</div>
+</template>
