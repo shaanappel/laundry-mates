@@ -1,0 +1,18 @@
+<template name="updateInfo">
+	<div class="account-info">
+		<h3 align: center>Please Update Your Info to Become A Laundry Mate</h3>
+		<form class="account-info-form standard-form">
+	        <p>First Name</p>
+	        <input type="text" id="first_name" name="first_name" class="form-control" value="{{firstName}}" required autofocus>
+	        <p>Last Name</p>
+	        <input type="text" id="last_name" name="last_name" class="form-control" value="{{lastName}}" required autofocus>
+	        <p>Email Address</p>
+	        <input type="email" id="email" name="email" class="form-control" value="{{userEmail}}" required autofocus>
+	        <p>Phone</p>
+	        <input type="text" id="phone" name="phone" class="form-control" value="{{#if phone}}{{phone}}{{/if}}" placeholder="e.g. (619)123-4566" required autofocus>
+	        <p>For which dorm you like to become a Laundry Mate?</p>
+			<input type="text" id="dorm" name="dorm" class="form-control" required autofocus>
+			<button class="save-account-info-button btn btn-lg btn-primary btn-block" type="submit">Submit Request to become a Mate</button>
+		</form>
+	</div>
+</template>

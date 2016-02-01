@@ -1,0 +1,45 @@
+<template name="permissions_admin">
+	<div class="description">
+		<h3>You are an Admin</h3>
+		<button class='CHAPTERNAME-loungers-list'>Export List of Loungers from {{primaryChapter}}</button>
+	</div>
+	<div class="admin-req">
+		{{#if statusIs 'unapproved'}}
+			<p class="unapproved"> Your SuperAdmin Privileges have been revoked. Please contact your Axel for clarification.</p>
+		{{else}}
+			{{#if statusIs 'processing'}}
+				<p class="processing"> Your request to become a superadmin is processing. Check back soon! You can contact Axel if you have any questions. </p>
+			{{else}}
+				{{#if statusIs 'denied'}}
+					<p class="denied">Your Request To Become A SuperAdmin Has Been Denied. Please contact Axel for clarification</p>
+				{{else}}
+					<p>Request to become a SuperAdmin</p>
+				{{/if}}
+				<div>
+					<button class= "request-btn">Request</button>
+				</div>
+			{{/if}}
+		{{/if}}
+	</div>
+	<div class="pending_host_permission_list">
+		<h3>Pending Host Requests</h3>
+		{{#if are_pending_host_requests}}
+			{{#each pending_host_requests}}
+				{{> permissionItem}}
+			{{/each}}
+		{{else}}
+			<p>There are no pending Host requests for this chapter</p>
+		{{/if}}
+	</div>
+	<br>
+	<div class="approved_host_permission_list">
+		<h3>Approved Host Requests</h3>
+		{{#if are_approved_host_requests}}
+			{{#each approved_host_requests}}
+				{{> permissionItem}}
+			{{/each}}
+		{{else}}
+			<p>There are no approved Host requests for this chapter</p>
+		{{/if}}
+	</div>
+</template>

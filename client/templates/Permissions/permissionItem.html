@@ -1,0 +1,12 @@
+<template name="permissionItem">
+	<div class="permissionItemcontainer">
+		{{request_first_name}} {{request_last_name}} {{request_email}} {{request_dorm}}
+
+		{{#if isApproved}}
+			<button class='unapprove-btn'>Unapprove</button>
+		{{else}}
+			<button class='approve-btn'>Approve</button>
+			<button class='delete-btn'>Delete Request</button>
+		{{/if}}
+	</div>
+</template>

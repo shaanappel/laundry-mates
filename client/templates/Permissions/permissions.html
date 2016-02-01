@@ -1,0 +1,14 @@
+<template name="permissions">
+	<div class="container axel-container">
+		<h1 class="permission-header">My Role</h1>
+		{{#if IsSuperAdmin}}
+			{{> permissions_superadmin}}
+		{{else}}
+			{{#if isMate}}
+				{{> permissions_mate}}
+			{{else}}
+				{{> permissions_customer}}
+			{{/if}}
+		{{/if}}
+	</div>
+</template>

@@ -1,0 +1,39 @@
+<template name="permissions_superadmin">
+	<div class="description">
+		<h3>You are a Super Admin</h3>
+		<button class='view-mates-btn'>Export List of Mates</button>
+	</div>
+	<div class="mate-requests">
+		<h2>Mate Requests</h2>
+		<div class="pending_host_permission_list">
+			<h3>Pending Mate Requests</h3>
+			{{#if are_pending_mate_requests}}
+				{{#each pending_mate_requests}}
+					{{> permissionItem}}
+				{{/each}}
+			{{else}}
+				<p>There are no pending Mate requests</p>
+			{{/if}}
+		</div>
+		<br>
+		<div class="approved_host_permission_list">
+			<h3>Approved Mate Requests</h3>
+			{{#if are_approved_mate_requests}}
+				{{#each approved_mate_requests}}
+					{{> permissionItem}}
+				{{/each}}
+			{{else}}
+				<p>There are no approved Mate requests</p>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
+
+
+
+
+
+
+
+

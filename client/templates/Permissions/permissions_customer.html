@@ -1,0 +1,26 @@
+<template name="permissions_customer">
+	<div class="description">
+		<h3>You are currently a Customer</h3>
+	</div>
+	<div>
+		{{#if statusIs 'unapproved'}}
+			<p class="unapproved"> Your Mate status have been revoked.</p>
+		{{else}}
+			{{#if statusIs 'processing'}}
+				<p class="processing"> Your request to become a Laundry Mate is processing. Check back soon! </p>
+			{{else}}
+				{{#if statusIs 'denied'}}
+					<p class="denied">Your Request To Become A Mate has been denied</p>
+				{{else}}
+					<p>Request to become a Laundry Mate!</p>
+				{{/if}}
+				<div>
+					<button class= "request-btn">Request</button>
+				</div>
+				<div class="update-info display-none">
+					{{> updateInfo}}
+				</div>
+			{{/if}}
+		{{/if}}
+	</div>
+</template>

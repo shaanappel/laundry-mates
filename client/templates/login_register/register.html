@@ -14,21 +14,6 @@
         <label for="password2" class="sr-only">Password Confirm</label>
         <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password" required>
         <br>
-        <p class='text-left'>Optional:</p>
-        <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone (in case you get lost)" >
-        <select id="primary_chapter" name="primary_chapter" class="form-control" placeholder="Select a Primary Chapter"> 
-        {{#each allChapters}}
-            <option value= {{name}}>{{spaced_name}}</option> 
-        {{/each}}
-        </select>
-        <br>
-        <input type="checkbox" name="remember_me" value="True">  Remember Me
-        <br>
-        <input type="checkbox" name="tlmonthlynews" id="tlmonthlynews" value="True" checked>  Sign me up for Thought Lounge Monthly Newsletter
-        <p>By signing up, I agree to Thought Lounge's <a href="/terms_of_service">terms of service</a></p>
-
-
-
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
         
       </form>
