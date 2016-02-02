@@ -17,3 +17,9 @@ Template.navbar.events({
 
 	}
 });
+
+Template.navbar.helpers({
+  loggedIn: function() {
+  	return Meteor.user();
+  }
+});

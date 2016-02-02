@@ -7,7 +7,7 @@ Template.slot_m.events({
 	}
 });
 
-Template.upcomingLoungeH.helpers({
+Template.slot_m.helpers({
   mate_name: function() {
     var mateId = Slots.findOne(this._id).slot_mate
     return Meteor.users.findOne({_id:hostId}).profile.first_name;
