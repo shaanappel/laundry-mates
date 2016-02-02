@@ -1,0 +1,23 @@
+<template name="create">
+	<div class="create">
+		<form class="create-form og-create-form standard-form">
+		   <p>Select a Dorm</p>
+		   <select id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm">
+				{{#each allDorms}}
+	    			<option value= {{name}}>{{spaced_name}}</option> 
+				{{/each}}
+			</select>
+				<p class="number-of-orders">Total Number of Orders (Set a manageable amount for yourself)</p>
+				<input type="number" id="number-of-orders" name="number-of-orders" value="6" min="1" max="100">
+		    <div class="create-form-date">
+		    <p>Date of Slot</p>
+		    	<input type="date" id="date" name="date" class="form-control middle-input" placeholder="12/12/1993" required autofocus>
+		 	</div>
+		 	<div class="create-form-time">
+		    <p>PickUp Time (e.g. 07:00 PM)</p>
+		    <input type="time" id="time" name="time" class="form-control middle-input" placeholder="Time" required autofocus>
+		  	</div>
+		    <button class="create-lounge-button og-create-lounge-btn btn btn-lg btn-primary btn-block" type="submit">Create Lounge</button>
+		  </form>
+	</div>
+</template>

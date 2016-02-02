@@ -9,3 +9,7 @@ Meteor.publish('requests', function() {
 Meteor.publish('slots', function() {
   return Slots.find();
 });
+
+Meteor.publish('dorms', function() {
+  return Dorms.find();
+});

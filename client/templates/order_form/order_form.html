@@ -12,8 +12,12 @@
 	  	<input type="text" id="clothing_type" name="clothing_type" required autofocus>
 	  	<p>Gender: </p>
 	  	<input type="text" id="gender" name="gender" required autofocus>
-	  	<p>Dorm: </p>
-	  	<input type="text" id="dorm" name="dorm" required autofocus>
+	  	<p>Select a Dorm</p>
+		   <select id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm">
+				{{#each allDorms}}
+	    			<option value= {{name}}>{{spaced_name}}</option> 
+				{{/each}}
+			</select>
 		<button class="submit_order btn" type="submit">Choose Time Slot</button>
 	</form>
 </template>

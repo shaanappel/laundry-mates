@@ -3,20 +3,28 @@ Template.dashboard.events({
 
 		Router.go('/orderform');
 
-	}
+	},
+
+  "click .slot": function(event){
+
+    Router.go('/create');
+
+  }
 });
 
 Template.dashboard.helpers({
   pending_orders: function() {
-    return Orders.find({userId: Meteor.userId(), completed: false});
+    return Orders.find({userId: Meteor.userId(), delivered: false});
     
   },
 
   are_pending_orders: function() {
-  	//var dorm = Session.get('dorm');
-    //return Slots.find({dorm: dorm});
+    return Orders.find({userId: Meteor.userId(), delivered: false}).fetch();
+    
+  },
 
-    return false
+  upcoming_slots: function() {
+    return Slots.find({slot_mate: Meteor.userId()});
     
   }
 });

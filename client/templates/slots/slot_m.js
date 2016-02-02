@@ -9,11 +9,10 @@ Template.slot_m.events({
 
 Template.slot_m.helpers({
   mate_name: function() {
-    var mateId = Slots.findOne(this._id).slot_mate
-    return Meteor.users.findOne({_id:hostId}).profile.first_name;
+    var mateId = Slots.findOne(this._id).slot_mate;
+    return Meteor.users.findOne({_id:mateId}).profile.first_name;
   }
 });
-
 
 
 

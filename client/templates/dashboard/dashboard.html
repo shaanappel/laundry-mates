@@ -5,6 +5,14 @@
 	<br>
 	<h2>Dashboard</h2>
 	<br>
+	{{#if isMate}}
+	<div>
+		<button class="slot"> Add a Slot </button>
+		{{#each upcoming_slots}}
+			{{> slot_m}}
+		{{/each}}
+	</div>
+	{{else}}
 	<div>
 		{{#if are_pending_orders}}
 			{{#each pending_orders}}
@@ -14,4 +22,5 @@
 			<button class="order"> Place an Order </button>
 		{{/if}}
 	</div>
+	{{/if}}
 </template>

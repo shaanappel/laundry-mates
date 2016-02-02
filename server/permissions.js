@@ -47,6 +47,21 @@ Slots.allow({
   fetch: ['owner']
 });
 
+Dorms.allow({
+  insert: function (userId, doc) {
+    // the user must be logged in
+    return true;
+  },
+  update: function (userId, doc, fields, modifier) {
+    // the user must be logged in
+    return true;
+  },
+  remove: function (userId, doc) {
+    // the user must be logged in
+    return true;
+  }
+});
+
 Meteor.users.allow({
  insert: function (userId, doc) {
     // the user must be logged in

@@ -1,0 +1,29 @@
+<template name="slot_info_form">	
+	<form class="create-form standard-form update-lounge">
+	   <p>Dorm</p>
+		<select id="dorm{{_id}}" name="select-a-dorm">
+ 		<option value={{slot_dorm}}> {{slot_dorm}} </option> 
+		{{#each allDorms}}
+			<option value= {{name}}>{{spaced_name}}</option> 
+		{{/each}}
+		</select>
+		
+		<div class="num-orders">
+			<p class="number-of-orders">Number of orders:</p>
+			<input id="number-of-orders{{_id}}" type="number" name="number-of-orders" value={{slot_total_num_orders}} min="1" max="100">
+		</div>
+	    <div class="create-form-date">
+		    <p>Date of Slot</p>
+	    	<input type="date" id="date{{_id}}" name="date" class="form-control middle-input" value= {{slot_date_raw}}  required autofocus>
+	 	</div>
+	 	<div class="create-form-time">
+		    <p>Pickup Time (e.g. 07:00 PM)</p>
+		    <input type="time" id="time{{_id}}" name="time" class="form-control middle-input" value = {{slot_time_raw}} required autofocus>
+	  	</div>
+	    
+	  	<p>Orders Info: </p>
+	  	
+	    <button class="update-lounge-button btn btn-lg btn-primary btn-block" type="submit">Save Changes</button>
+	    <div class="cancel-lounge-button">Cancel This Lounge</div>
+	</form>
+</template>
