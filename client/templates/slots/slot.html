@@ -1,0 +1,45 @@
+<template name="slot">
+	<div class="lounge-wrapper-outer">
+		<div class="lounge-wrapper-inner">
+			<div class="lounge-wrapper">
+				<div class="lounge-date-host-loc">
+					<div class="lounge-date-host-loc-inner">
+						<div class="lounge-date">
+							<div class="lounge-day">
+						    {{slot_day}},
+						  </div>
+						  <div class="lounge-time">
+						    {{slot_time}}
+						  </div>
+						  <div class="lounge-date-numbers">
+						    {{slot_date_numbers}}
+						  </div>
+						</div>
+					</div>
+  					<p>Mate: {{mate_name}}</p>
+					</div>
+					<div class="lounge-loc">
+						{{slot_dorm}}
+					</div>
+				</div>
+				<div class="lounge-spots-buttons">
+					{{> bubbles}}
+					<div class="lounge-buttons">
+						{{#if isFull}}
+							<div class="lounge-buttons-text">
+								<p>This slot is full!!</p>
+							</div>
+						{{else}}
+							{{#if userIsParticipant}}
+								<div class="lounge-buttons-text">
+									<p>You have already placed an order in this slot!</p>
+								</div>
+							{{else}}
+								<div class="sign-up-btn">Place Order</div>
+							{{/if}}
+						{{/if}}
+					</div>
+				</div>
+			</div>
+	</div>
+</template>

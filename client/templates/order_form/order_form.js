@@ -4,7 +4,33 @@ Template.orderForm.events({
 		var last_name = trimInput($('#last_name').val());
     	var clothing_type = trimInput($('#clothing_type').val());
     	var gender = trimInput($('#gender').val());
-		//insert order here
+    	var dorm = trimInput($('#dorm').val());
+    	if (Meteor.userId()){
+    		var userId = Meteor.userId();
+    	} else {
+    		var userId = "guest";
+    	}
+
+    	Session.set('order_dorm', dorm);
+    	Session.set('order_userId', userId);
+    	Session.set('order_first_name', first_name);
+    	Session.set('order_last_name', last_name);
+    	Session.set('order_clothing_type', clothing_type);
+    	Session.set('order_gender', gender);
+
+
+		/*//insert order here
+		Orders.insert({
+			order_dorm: dorm,
+			order_userId: userId,
+	    	order_first_name: first_name,
+	    	order_last_name: last_name,
+	    	order_clothing_type: clothing_type,
+	    	order_gender: gender
+		});
+		console.log('inserted')
+		*/
+
 
 		Router.go('/schedule');
 

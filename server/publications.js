@@ -1,7 +1,11 @@
 Meteor.publish('orders', function() {
-  return Posts.find();
+  return Orders.find();
 });
 
 Meteor.publish('requests', function() {
   return Requests.find();
+});
+
+Meteor.publish('slots', function() {
+  return Slots.find();
 });

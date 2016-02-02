@@ -9,15 +9,13 @@ Template.schedule.events({
 Template.schedule.helpers({
   time_slots: function() {
     var dorm = Session.get('dorm');
-    return Slots.find({dorm: dorm});
+    return Slots.find({slot_dorm: dorm});
     
   },
 
   are_time_slots: function() {
-  	//var dorm = Session.get('dorm');
-    //return Slots.find({dorm: dorm});
-
-    return false
+  	var dorm = Session.get('dorm');
+    return Slots.find({slot_dorm: dorm}).fetch();
     
   }
 });
