@@ -1,5 +1,5 @@
 <template name="slot_info_form">	
-	<form class="create-form standard-form update-lounge">
+	<form class="create-form standard-form update-slot">
 	   <p>Dorm</p>
 		<select id="dorm{{_id}}" name="select-a-dorm">
  		<option value={{slot_dorm}}> {{slot_dorm}} </option> 
@@ -20,10 +20,8 @@
 		    <p>Pickup Time (e.g. 07:00 PM)</p>
 		    <input type="time" id="time{{_id}}" name="time" class="form-control middle-input" value = {{slot_time_raw}} required autofocus>
 	  	</div>
-	    
-	  	<p>Orders Info: </p>
-	  	
+	  	 
 	    <button class="update-lounge-button btn btn-lg btn-primary btn-block" type="submit">Save Changes</button>
-	    <div class="cancel-lounge-button">Cancel This Lounge</div>
+	    <div class="cancel-lounge-button">Cancel This Slot</div>
 	</form>
 </template>

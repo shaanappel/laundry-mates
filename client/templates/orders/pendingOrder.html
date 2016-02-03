@@ -1,4 +1,4 @@
-<template name="slot_m">
+<template name="pendingOrder">
 	<div class="lounge-wrapper-outer">
 		<div class="lounge-wrapper-inner">
 			<div class="lounge-wrapper">
@@ -6,39 +6,27 @@
 					<div class="lounge-date-host-loc-inner">
 						<div class="lounge-date">
 							<div class="lounge-day">
-						    {{slot_day}},
+						    {{slotFeature "slot_day"}},
 						  </div>
 						  <div class="lounge-time">
-						    {{slot_time}}
+						    {{slotFeature "slot_time"}}
 						  </div>
 						  <div class="lounge-date-numbers">
-						    {{slot_date_numbers}}
+						    {{slotFeature "slot_date_numbers"}}
 						  </div>
 						</div>
 					</div>
-					<div class="lounge-host">
   					<p>Mate: {{mate_name}}</p>
 					</div>
 					<div class="lounge-loc">
-						{{slot_dorm}}
+						{{order_status_button}}
 					</div>
-				</div>
-				<div class="lounge-spots-buttons">
-					{{> bubbles}}
-					<div class="lounge-buttons">
-						<div class="this-slot-info">Slot Info</div>
-						<div class="this-slot-info orders_list">Orders List</div>
+					<div>
+						<p>{{order_clothing_type}}</p>
+						<p>{{order_gender}}</p>
+						<p>{{order_dorm}}</p>
 					</div>
-				</div>
-				<div class="lounge-info display-none" id = {{_id}} >
-					{{> slot_info_form}}
 				</div>
 			</div>
-		</div>
 	</div>
 </template>
-
-
-
-
-

@@ -1,0 +1,19 @@
+<template name="orderList">
+	<br>
+	<br>
+	<br>
+	<br>
+	<div>
+		<button class="back"> Back </button>
+	</div>
+	<div>
+		{{#if are_time_slots}}
+			{{#each time_slots}}
+				{{> slot}}
+			{{/each}}
+		{{else}}
+			<h3>There are no Laundry Mates for you dorm!</h3>
+		{{/if}}
+		
+	</div>
+</template>

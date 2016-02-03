@@ -5,8 +5,13 @@
 	<br>
 	<h1> Laundry Mate </h1>
 	<br>
-  <button class = "login"> Sign In </button>
-  <button class = "register"> Sign Up </button>
-  <button class = "make_order"> Make an Order as a Guest</button>
-
+	<br>
+	{{#if loggedIn}}
+		<button class = "make_order" id="make_order"> Place an Order</button>
+		<button class = "check_order" id="check_order"> Check Your Orders</button>
+	{{else}}
+		<button class = "login" id="sign-in"> Sign In </button>
+		<button class = "register" id="sign-up"> Sign Up </button>
+		<button class = "make_order_guest" id="make_order_guest"> Place an Order as A Guest</button>
+	{{/if}}
 </template>

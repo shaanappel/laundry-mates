@@ -3,6 +3,16 @@ Template.home.events({
 		Router.go('/login');	
 	},
 
+	"click .make_order_guest": function(event){	
+		Object.keys(Session.keys).forEach(function(key){ Session.set(key, undefined); });
+		Session.keys = {};
+		Router.go('/orderform');
+	},
+
+	"click .check_order": function(event){
+		Router.go('/dashboard');	
+	},
+
 	"click .make_order": function(event){
 		Router.go('/orderform');	
 	},
@@ -10,4 +20,10 @@ Template.home.events({
 	"click .register": function(event){
 		Router.go('/register');	
 	}
+});
+
+Template.home.helpers({
+  loggedIn: function() {
+    return Meteor.user();
+  }
 });

@@ -4,7 +4,13 @@ Template.slot_m.events({
 		$('#' + id).toggleClass('display-none');
     //$('#' + id).hide();
 		console.log('its working');
-	}
+	},
+
+  "click .orders_list": function(event) {
+    Session.set('current_slot', this);
+    Router.go('/orderlist');
+  }
+
 });
 
 Template.slot_m.helpers({

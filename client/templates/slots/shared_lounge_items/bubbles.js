@@ -1,7 +1,8 @@
 Template.bubbles.helpers({
   spots_left: function() {
-  	var total = Slots.findOne(this._id).slot_total_num_orders;
-  	var taken = Slots.findOne(this._id).slot_num_orders;
+    slot = this;
+  	var total = Slots.findOne(slot._id).slot_total_num_orders;
+  	var taken = Slots.findOne(slot._id).slot_num_orders;
   	var left = total - taken;
   	if (left == 1) {
   		return "1 spot left";

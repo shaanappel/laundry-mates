@@ -14,12 +14,12 @@ Template.dashboard.events({
 
 Template.dashboard.helpers({
   pending_orders: function() {
-    return Orders.find({userId: Meteor.userId(), delivered: false});
+    return Orders.find({order_userId: Meteor.userId(), delivered: false});
     
   },
 
   are_pending_orders: function() {
-    return Orders.find({userId: Meteor.userId(), delivered: false}).fetch();
+    return Orders.find({order_userId: Meteor.userId(), delivered: false}).fetch();
     
   },
 

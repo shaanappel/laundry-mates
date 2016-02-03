@@ -6,11 +6,7 @@ Template.slot.events({
 
     var mate_id = this.slot_mate;
     var id = this._id;
-    var ary = Slots.findOne(id).slot_orders;
-    ary[ary.length] = Meteor.userId();
     Session.set('slot_id', id);
-    Session.set('slot_orders', ary);
-    Session.set('slot_num_orders', ary.length);
 
     /*
     Slots.update({_id: id}, { $set: {
@@ -43,7 +39,15 @@ Template.slot.helpers({
   },
 
   userIsParticipant: function() {
-    return Slots.find({_id : this._id, slot_orders: Meteor.userId()}).fetch();
+    var orders_arry = this.slot_orders;
+    var ary_length = orders_arry.length;
+    for (var i = 0; i < ary_length; i++) {
+        var order = Orders.findOne(orders_arry[i]);
+        if (order.order_userId == Meteor.userId()) {
+          return true
+        }
+    }
+    return false;
   },
 
   loggedIn: function() {

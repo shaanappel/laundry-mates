@@ -5,17 +5,20 @@
 	<br>
 	<form class= "submit_order_form">
 	  	<p>First name:</p>
-	  	<input type="text" id="first_name" name="first_name" required autofocus>
+	  	<input type="text" id="first_name" name="first_name" value="{{storedOrder 'order_first_name'}}" required autofocus>
 	  	<p>Last name:</p>
-	  	<input type="text" id="first_name" name="last_name" required autofocus>
+	  	<input type="text" id="first_name" name="last_name" value="{{storedOrder 'order_last_name'}}" required autofocus>
 	  	<p>Clothing Type:</p>
-	  	<input type="text" id="clothing_type" name="clothing_type" required autofocus>
+	  	<input type="text" id="clothing_type" name="clothing_type" value="{{storedOrder 'order_clothing_type'}}" required autofocus>
 	  	<p>Gender: </p>
-	  	<input type="text" id="gender" name="gender" required autofocus>
+	  	<input type="text" id="gender" name="gender" value="{{storedOrder 'order_gender'}}" required autofocus>
 	  	<p>Select a Dorm</p>
 		   <select id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm">
+		   		{{#if storedOrder 'order_dorm'}}
+		   			<option value= {{storedOrder 'order_dorm'}}>{{order_spaced_name}}</option>
+		   		{{/if}}
 				{{#each allDorms}}
-	    			<option value= {{name}}>{{spaced_name}}</option> 
+	    			<option value= {{name}}>{{spaced_name}}</option>
 				{{/each}}
 			</select>
 		<button class="submit_order btn" type="submit">Choose Time Slot</button>

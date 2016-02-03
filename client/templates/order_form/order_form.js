@@ -7,6 +7,12 @@ Template.orderForm.events({
     	var dorm = trimInput($('#select-a-dorm').val());
     	if (Meteor.userId()){
     		var userId = Meteor.userId();
+
+    		Meteor.users.update({_id: userId}, { $set: {
+		      'profile.dorm': dorm,
+		      'profile.clothing_type': clothing_type,
+		      'profile.gender': gender
+		    }});
     	} else {
     		var userId = "guest";
     	}
@@ -37,6 +43,35 @@ Template.orderForm.events({
 
 		return false;
 	}
+});
+
+Template.orderForm.helpers({
+  storedOrder: function(param) {
+  	var session_stored = Session.get(param);
+  	var user_param = param.substring(6);
+
+  	if (session_stored) {
+  		return session_stored;
+  	} else if (Meteor.user()) {
+		return Meteor.user().profile[user_param];
+  	} else {
+  		return null;
+  	}
+  },
+
+  order_spaced_name: function() {
+  	var session_stored = Session.get('order_dorm');
+
+  	if (session_stored) {
+  		return session_stored.split('_').join(' ');
+  	} else if (Meteor.user()) {
+		if (Meteor.user().profile.dorm) {
+			return Meteor.user().profile.dorm.split('_').join(' ');
+		}
+  	} else {
+  		return null;
+  	}
+  }
 });
 
 // Trim Helper
