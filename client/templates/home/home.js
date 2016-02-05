@@ -24,6 +24,12 @@ Template.home.events({
 
 Template.home.helpers({
   loggedIn: function() {
-    return Meteor.user();
+  	user = Meteor.user();
+  	if (user) {
+  		if (user.profile.role.mate) {
+  			Router.go('/dashboard');
+  		}
+  	}
+    return user;
   }
 });

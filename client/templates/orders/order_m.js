@@ -1,31 +1,16 @@
 Template.order_m.events({
-	"click .sign-up-btn": function(event) {
-    if (Meteor.user()){
-      var userId = Meteor.userId();
-    }
-
-    var mate_id = this.slot_mate;
-    var id = this._id;
-    var ary = Slots.findOne(id).slot_orders;
-    ary[ary.length] = Meteor.userId();
-    Session.set('slot_id', id);
-    Session.set('slot_orders', ary);
-    Session.set('slot_num_orders', ary.length);
-
-    /*
-    Slots.update({_id: id}, { $set: {
-    'slot_orders': ary,
-    'slot_num_orders': ary.length
+	"click .picked-up": function(event) {
+    var orderId = this._id;
+    Orders.update({_id: orderId}, { $set: {
+    'picked_up': true
     }});
-    */
+  },
 
-    Router.go('/pay');
-
-    //add mail thing here to send confirmartion email to this users email about Lounge by this._id
-    //Meteor.user().profile.first_name
-    //Meteor.user().emails[0].address
-
-    console.log('its working');
+  "click .delivered": function(event) {
+    var orderId = this._id;
+    Orders.update({_id: orderId}, { $set: {
+    'delivered': true
+    }});
   }
 
 });
@@ -37,10 +22,13 @@ Template.order_m.helpers({
   },
 
   order_status: function() {
-    order = this;
+    var order = this;
     if (order.picked_up) {
       if (order.delivered) {
-        return "Status: Your have deliverd the order";
+        if (order.confirmed) {
+          return "Status: Delivery has been confirmed! Well done!"
+        }
+        return "Status: Your have delivered the order";
       }
       return "Status: You have picked up the laundry";
     }

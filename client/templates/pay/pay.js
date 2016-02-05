@@ -12,7 +12,8 @@ Template.pay.events({
         order_room_num: Session.get('order_room_num'),
         order_slot: slot_id,
         picked_up: false,
-        delivered: false
+        delivered: false,
+        confirmed: false
     });
 
     var ary = Slots.findOne(slot_id).slot_orders;

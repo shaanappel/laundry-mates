@@ -26,8 +26,27 @@ Template.pendingOrder.events({
     //Meteor.user().emails[0].address
 
     console.log('its working');
-  }
+  },
 
+  "click .confirm": function(event) {
+    var orderId = this._id;
+    Orders.update({_id: orderId}, { $set: {
+    'confirmed': true
+    }});
+  },
+
+  "click .cancel_order": function(event) {
+    var orderId = this._id;
+    var slotId = this.order_slot;
+    var slot = Slots.findOne(slotId);
+    var new_slot_orders = slot.slot_orders
+    var index = new_slot_orders.indexOf(orderId);
+    new_slot_orders.splice(index, 1);
+    Slots.update({_id: slotId}, { $set: {
+    'slot_orders': new_slot_orders
+    }});
+    Orders.remove(orderId);
+  }
 });
 
 Template.pendingOrder.helpers({
@@ -42,10 +61,13 @@ Template.pendingOrder.helpers({
     return feature;
   },
 
-  order_status_button: function() {
+  order_status: function() {
     order = this;
     if (order.picked_up) {
       if (order.delivered) {
+        if (order.confirmed) {
+          return "Status: Thank you!"
+        }
         return "Status: Your order has been delivered";
       }
       return "Status: Your order has been picked up";

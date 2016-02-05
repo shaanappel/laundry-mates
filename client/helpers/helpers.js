@@ -31,6 +31,10 @@ Template.registerHelper('isMate', function() {
     return Meteor.user().profile.role.mate;
 });
 
+Template.registerHelper('equal', function(a, b) {
+    return a == b;
+});
+
 Template.registerHelper('allDorms', function() {
     return Dorms.find({}, {sort: { name: 1 }});
 });

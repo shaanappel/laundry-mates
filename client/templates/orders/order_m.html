@@ -6,6 +6,15 @@
 					</div>
 					<div class="lounge-loc">
 						{{order_status}}
+						{{#if picked_up}}
+							{{#if delivered}}
+								<p>Waiting on confirmation of delivery by customer</p>
+							{{else}}
+								<button class="delivered">Delivered</button>
+							{{/if}}
+						{{else}}
+							<button class="picked-up">Picked-Up</button>
+						{{/if}}
 					</div>
 					<div>
 						<p>Customer: {{customer_name}}</p>
