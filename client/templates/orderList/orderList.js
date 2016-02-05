@@ -5,15 +5,20 @@ Template.orderList.events({
 });
 
 Template.orderList.helpers({
-  order: function() {
-    var dorm = Session.get('dorm');
-    return Slots.find({slot_dorm: dorm});
+  orders: function() {
+    var ary = this.slot_orders;
+    return Orders.find({_id: { $in: ary}});
     
   },
 
   are_orders: function() {
-  	var dorm = Session.get('dorm');
-    return Slots.find({slot_dorm: dorm}).fetch();
+  	var ary = this.slot_orders;
+    return Orders.find({_id: { $in: ary}}).fetch();
     
-  }
+  },
+
+   mate_name: function() {
+    var mateId = this.slot_mate
+    return Meteor.users.findOne({_id:mateId}).profile.first_name;
+  },
 });

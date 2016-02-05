@@ -5,14 +5,20 @@
 	<br>
 	<div>
 		<button class="back"> Back </button>
+		<p>Mate: {{mate_name}}</p>
+		<p>Day: {{slot_date}}</p>
+		<p>Date: {{slot_date_numbers}}</p>
+		<p>Time: {{slot_time}}</p>
 	</div>
+
 	<div>
-		{{#if are_time_slots}}
-			{{#each time_slots}}
-				{{> slot}}
+		<h2><strong> Orders</strong> </h2>
+		{{#if are_orders}}
+			{{#each orders}}
+				<p>{{> order_m}}</p>
 			{{/each}}
 		{{else}}
-			<h3>There are no Laundry Mates for you dorm!</h3>
+			<h3>There are no orders for this slot yet!</h3>
 		{{/if}}
 		
 	</div>

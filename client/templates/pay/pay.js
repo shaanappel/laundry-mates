@@ -9,6 +9,7 @@ Template.pay.events({
         order_last_name: Session.get('order_last_name'),
         order_clothing_type: Session.get('order_clothing_type'),
         order_gender: Session.get('order_gender'),
+        order_room_num: Session.get('order_room_num'),
         order_slot: slot_id,
         picked_up: false,
         delivered: false

@@ -7,8 +7,8 @@ Template.slot_m.events({
 	},
 
   "click .orders_list": function(event) {
-    Session.set('current_slot', this);
-    Router.go('/orderlist');
+    var route = '/orderlist/'+this._id
+    Router.go(route);
   }
 
 });

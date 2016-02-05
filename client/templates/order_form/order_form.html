@@ -21,6 +21,8 @@
 	    			<option value= {{name}}>{{spaced_name}}</option>
 				{{/each}}
 			</select>
+		<p>Room Number: </p>
+	  	<input type="number" id="room_num" name="romm_num" value="{{storedOrder 'order_room_num'}}" required autofocus>
 		<button class="submit_order btn" type="submit">Choose Time Slot</button>
 	</form>
 </template>

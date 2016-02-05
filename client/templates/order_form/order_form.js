@@ -5,13 +5,15 @@ Template.orderForm.events({
     	var clothing_type = trimInput($('#clothing_type').val());
     	var gender = trimInput($('#gender').val());
     	var dorm = trimInput($('#select-a-dorm').val());
+      var room_num = trimInput($('#room_num').val());
     	if (Meteor.userId()){
     		var userId = Meteor.userId();
 
     		Meteor.users.update({_id: userId}, { $set: {
 		      'profile.dorm': dorm,
 		      'profile.clothing_type': clothing_type,
-		      'profile.gender': gender
+		      'profile.gender': gender,
+          'profile.room_num': room_num,
 		    }});
     	} else {
     		var userId = "guest";
@@ -24,6 +26,7 @@ Template.orderForm.events({
     	Session.set('order_last_name', last_name);
     	Session.set('order_clothing_type', clothing_type);
     	Session.set('order_gender', gender);
+      Session.set('order_room_num', room_num);
 
 
 		/*//insert order here
