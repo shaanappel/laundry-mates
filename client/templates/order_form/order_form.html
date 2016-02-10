@@ -13,7 +13,7 @@
 	  	<p>Gender: </p>
 	  	<input type="text" id="gender" name="gender" value="{{storedOrder 'order_gender'}}" required autofocus>
 	  	<p>Select a Dorm</p>
-		   <select id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm">
+		   <select id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm" required>
 		   		{{#if storedOrder 'order_dorm'}}
 		   			<option value= {{storedOrder 'order_dorm'}}>{{order_spaced_name}}</option>
 		   		{{/if}}
