@@ -10,12 +10,19 @@
 				<p class="number-of-orders">Total Number of Orders (Set a manageable amount for yourself)</p>
 				<input type="number" id="number-of-orders" name="number-of-orders" value="6" min="1" max="100">
 		    <div class="create-form-date">
-		    <p>Date of Slot</p>
+		    	<p>Date of Slot</p>
 		    	<input type="date" id="date" name="date" class="form-control middle-input" placeholder="12/12/1993" required autofocus>
 		 	</div>
 		 	<div class="create-form-time">
-		    <p>PickUp Time (e.g. 07:00 PM)</p>
-		    <input type="time" id="time" name="time" class="form-control middle-input" placeholder="Time" required autofocus>
+		    	<p>PickUp Time (e.g. 07:00 PM)</p>
+		    	<input type="time" id="time" name="time" class="form-control middle-input" placeholder="Time" required autofocus>
+		  	</div>
+		  	<div class="gender">
+			  	<p>Gender:</p>
+			    <select id="gender" name="gender" placeholder="Select your Gender">
+		    		<option value= "male">Male</option>
+		    		<option value= "female">Female</option> 
+				</select>
 		  	</div>
 		    <button class="create-lounge-button og-create-lounge-btn btn btn-lg btn-primary btn-block" type="submit">Create Slot</button>
 		  </form>

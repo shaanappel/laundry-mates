@@ -21,6 +21,11 @@ Template.order_m.helpers({
   	return Meteor.users.findOne({_id:mateId}).profile.first_name;
   },
 
+  customer_name: function() {
+    var order = this;
+    return order.order_first_name;
+  },
+
   order_status: function() {
     var order = this;
     if (order.picked_up) {

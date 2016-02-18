@@ -74,8 +74,14 @@ Template.slot_info_form.events({
 
 	"click .cancel-lounge-button": function(event){
 		var slotId = this._id;
+		var slot = this;
 		var x = window.confirm("Are you sure you want to delete this Slot?");
 		if (x) {
+			var ordersToRemove = slot.slot_orders;
+			var arrayLength = ordersToRemove.length;
+			for (var i = 0; i < arrayLength; i++) {
+			    Orders.remove({_id: ordersToRemove[i]});
+			}
 			Slots.remove({_id: slotId});
 		}
 	}

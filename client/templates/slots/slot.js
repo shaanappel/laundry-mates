@@ -28,7 +28,7 @@ Template.slot.events({
 
 Template.slot.helpers({
   mate_name: function() {
-  	var mateId = Slots.findOne(this._id).slot_mate
+  	var mateId = this.slot_mate;
   	return Meteor.users.findOne({_id:mateId}).profile.first_name;
   },
 

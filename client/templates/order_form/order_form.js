@@ -56,7 +56,7 @@ Template.orderForm.helpers({
   	if (session_stored) {
   		return session_stored;
   	} else if (Meteor.user()) {
-		return Meteor.user().profile[user_param];
+      return Meteor.user().profile[user_param];
   	} else {
   		return null;
   	}

@@ -13,3 +13,7 @@ Meteor.publish('slots', function() {
 Meteor.publish('dorms', function() {
   return Dorms.find();
 });
+
+Meteor.publish('mates', function() {
+  return Meteor.users.find({'profile.role.mate': true});
+});
