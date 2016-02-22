@@ -17,3 +17,5 @@ Meteor.publish('dorms', function() {
 Meteor.publish('mates', function() {
   return Meteor.users.find({'profile.role.mate': true});
 });
+
+//{'profile.role.mate': true}

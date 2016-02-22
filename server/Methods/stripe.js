@@ -22,7 +22,9 @@ Meteor.methods({
 
   'chargeCard': function(stripeToken) {
     check([stripeToken], [Match.Any]);
-    var Stripe = StripeAPI('sk_test_UB4JIQNcwgJT8JD7071X5S8x');
+
+    var stripeKey = Meteor.settings.private.stripe.testSecretKey;
+    var Stripe = StripeAPI(stripeKey);
 
     Stripe.charges.create({
       amount: 1000,
