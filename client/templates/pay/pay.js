@@ -35,7 +35,6 @@ Template.pay.events({
               'order_payment_token': stripeToken
             }});
             console.log(order_id);
-            Meteor.call('chargeCard', stripeToken);
         });
 
 

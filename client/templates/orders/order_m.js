@@ -8,9 +8,12 @@ Template.order_m.events({
 
   "click .delivered": function(event) {
     var orderId = this._id;
+    var order = this;
     Orders.update({_id: orderId}, { $set: {
     'delivered': true
     }});
+    var stripeToken = order.order_payment_token;
+    Meteor.call('chargeCard', stripeToken);
   }
 
 });
