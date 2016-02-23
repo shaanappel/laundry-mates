@@ -12,6 +12,30 @@ Template.order_m.events({
     Orders.update({_id: orderId}, { $set: {
     'delivered': true
     }});
+
+    var slot_ary_of_orders = Slots.findOne(order.order_slot).slot_orders.slice();
+    var index = slot_ary_of_orders.indexOf(orderId);
+    if (index > -1) {
+      slot_ary_of_orders.splice(index, 1);
+    }
+    console.log(orderId)
+    console.log(slot_ary_of_orders)
+    var slot_orders = Orders.find({_id: { $in: slot_ary_of_orders}});
+    var all_delivered = true;
+    slot_orders.forEach(function(slot_order){
+        if(!slot_order.delivered){
+          all_delivered = false
+        }
+    });
+
+    if(all_delivered) {
+      Slots.update({_id: order.order_slot}, { $set: {
+      'slot_delivered': true
+      }});
+    }
+    console.log(Slots.findOne(order.order_slot).slot_delivered)
+
+
     var stripeToken = order.order_payment_token;
     Meteor.call('chargeCard', stripeToken);
   }

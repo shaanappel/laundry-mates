@@ -24,7 +24,7 @@ Template.dashboard.helpers({
   },
 
   upcoming_slots: function() {
-    return Slots.find({slot_mate: Meteor.userId()});
+    return Slots.find({slot_mate: Meteor.userId(), $where: function () {return !this.slot_delivered}});
     
   }
 });

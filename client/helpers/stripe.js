@@ -5,8 +5,8 @@ Meteor.startup(function() {
 
 Meteor.startup(function() {
 	var stripeKey = Meteor.settings.public.stripe.testPublishableKey;
-    var handler = StripeCheckout.configure({
+    /*var handler = StripeCheckout.configure({
         key: stripeKey,
         token: function(token) {}
-    });
+    });*/
 });

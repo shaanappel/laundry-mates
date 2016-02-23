@@ -49,7 +49,7 @@ Template.permissionItem.events({
 		var request_userId = Requests.findOne(this._id).request_userId;
 
 
-		Meteor.users.update(request_userId, {$set: {"profile.role.mate": true}});
+		Meteor.users.update(request_userId, {$set: {"profile.role.mate": false}});
 		
 		Requests.update(this._id, {$set: {request_approved: "false"}});
 		
