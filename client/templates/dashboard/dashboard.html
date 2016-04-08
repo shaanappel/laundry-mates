@@ -7,7 +7,7 @@
 	<br>
 	{{#if isMate}}
 	<div>
-		<button class="slot"> Add a Slot </button>
+		<button class="slot btn btn-lg btn-success"> Add a Slot </button>
 		{{#each upcoming_slots}}
 			{{> slot_m}}
 		{{/each}}
@@ -19,7 +19,7 @@
 				{{> pendingOrder}}
 			{{/each}}
 		{{else}}
-			<button class="order"> Place an Order </button>
+			<button class="order btn btn-lg btn-success"> Place an Order </button>
 			<br>
 			<p> If you placed an order and it does not appear here, unfortunately it has been deleted</p>
 		{{/if}}

@@ -2,16 +2,45 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<h1> Laundry Mate </h1>
-	<br>
-	<br>
+
 	{{#if loggedIn}}
 		<button class = "make_order" id="make_order"> Place an Order</button>
 		<button class = "check_order" id="check_order"> Check Your Orders</button>
 	{{else}}
-		<button class = "login" id="sign-in"> Sign In </button>
-		<button class = "register" id="sign-up"> Sign Up </button>
-		<button class = "make_order_guest" id="make_order_guest"> Place an Order as A Guest</button>
+		<header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                	<div class="intro-text">
+                        <span class="name">LAUNDRYMATES</span>
+                        <hr class="star-light">
+                        <span class="skills">Quit wasting time doing your own laundry. 
+Get someone to do it for you right in your dorm.</span>
+                    </div>
+
+                    <button class = "login btn btn-lg btn-outline" id="sign-in"> Sign In </button>
+					<button class = "register btn btn-lg btn-outline" id="sign-up"> Sign Up </button>
+                	
+
+                </div>
+            </div>
+        </div>
+    	</header>
+    	<section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>HOW IT WORKS</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+            	<div class="embed-responsive embed-responsive-16by9">
+            		<iframe width="640" height="360" src="https://www.youtube.com/embed/OeDLLH_HzGg" frameborder="0" allowfullscreen></iframe>
+            	</div>
+            </div>
+        </div>
+        </section>
+
 	{{/if}}
 </template>
