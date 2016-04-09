@@ -55,8 +55,8 @@ Template.create.events({
 		slot_orders: slot_orders,
 		slot_num_orders: slot_orders.length,
 		slot_date_raw: date,
-		slot_time_raw: time,
-		slot_gender: $('#gender').val()
+		slot_time_raw: time
+		//slot_gender: $('#gender').val()
 		});
 
 		Router.go('/dashboard');

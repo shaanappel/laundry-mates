@@ -7,7 +7,9 @@
 		   <p>Select a Dorm</p>
 		   <select class="form-control" id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm">
 				{{#each allDorms}}
-	    			<option value= {{name}}>{{spaced_name}}</option> 
+					{{#if notSelectedDorm}}
+	    				<option value= {{name}}>{{spaced_name}}</option>
+	    			{{/if}}
 				{{/each}}
 			</select>
 			<div class="orders">	
@@ -23,13 +25,13 @@
 		    	<p>PickUp Time (e.g. 07:00 PM)</p>
 		    	<input type="time" id="time" name="time" class="form-control middle-input" placeholder="Time" required autofocus>
 		  	</div>
-		  	<div class="gender">
+		  	<!-- <div class="gender">
 			  	<p>Gender:</p>
 			    <select id="gender" name="gender" placeholder="Select your Gender">
 		    		<option value= "male">Male</option>
 		    		<option value= "female">Female</option> 
 				</select>
-		  	</div>
+		  	</div> -->
 		    <button class="create-lounge-button og-create-lounge-btn btn btn-lg btn-primary btn-block" type="submit">Create Slot</button>
 		  </form>
 	</div>

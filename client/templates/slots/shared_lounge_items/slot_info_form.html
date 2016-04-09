@@ -4,7 +4,9 @@
 		<select id="dorm{{_id}}" name="select-a-dorm">
  		<option value={{slot_dorm}}> {{slot_dorm}} </option> 
 		{{#each allDorms}}
-			<option value= {{name}}>{{spaced_name}}</option> 
+			{{#if notSelectedDorm}}
+	    		<option value= {{name}}>{{spaced_name}}</option>
+	    	{{/if}}
 		{{/each}}
 		</select>
 		

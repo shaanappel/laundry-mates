@@ -2,8 +2,7 @@ Template.orderForm.events({
 	"submit .submit_order_form": function(event){
 		var first_name = trimInput($('#first_name').val());
 		var last_name = trimInput($('#last_name').val());
-    	var clothing_type = trimInput($('#clothing_type').val());
-    	var gender = trimInput($('#gender').val());
+    	//var clothing_type = trimInput($('#clothing_type').val());
     	var dorm = trimInput($('#select-a-dorm').val());
       var room_num = trimInput($('#room_num').val());
     	if (Meteor.userId()){
@@ -11,8 +10,7 @@ Template.orderForm.events({
 
     		Meteor.users.update({_id: userId}, { $set: {
 		      'profile.dorm': dorm,
-		      'profile.clothing_type': clothing_type,
-		      'profile.gender': gender,
+		      //'profile.clothing_type': clothing_type,
           'profile.room_num': room_num,
 		    }});
     	} else {
@@ -24,8 +22,7 @@ Template.orderForm.events({
     	Session.set('order_userId', userId);
     	Session.set('order_first_name', first_name);
     	Session.set('order_last_name', last_name);
-    	Session.set('order_clothing_type', clothing_type);
-    	Session.set('order_gender', gender);
+    	//Session.set('order_clothing_type', clothing_type);
       Session.set('order_room_num', room_num);
 
 
@@ -74,6 +71,12 @@ Template.orderForm.helpers({
   	} else {
   		return null;
   	}
+  },
+
+  notSelectedDorm: function () {
+    var option_dorm = this.name;
+    var dorm = Session.get('order_dorm');
+    return dorm != option_dorm;
   }
 });
 

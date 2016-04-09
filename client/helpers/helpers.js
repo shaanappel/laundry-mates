@@ -38,3 +38,10 @@ Template.registerHelper('equal', function(a, b) {
 Template.registerHelper('allDorms', function() {
     return Dorms.find({}, {sort: { name: 1 }});
 });
+
+Template.registerHelper('notSelectedDorm', function() {
+    var option_dorm = this.name;
+    var dorm = Session.get('order_dorm');
+    return dorm != option_dorm;
+});
+

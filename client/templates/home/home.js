@@ -26,9 +26,7 @@ Template.home.helpers({
   loggedIn: function() {
   	user = Meteor.user();
   	if (user) {
-  		if (user.profile.role.mate) {
-  			Router.go('/dashboard');
-  		}
+  		Router.go('/dashboard');
   	}
     return user;
   }

@@ -25,4 +25,15 @@ Template.bubbles.helpers({
     }
     return orders;
   },
+
+  dots: function(num) {
+
+    slot = this;
+    var total = Slots.findOne(slot._id).slot_total_num_orders;
+    var taken = Slots.findOne(slot._id).slot_num_orders;
+    var left = total - taken;
+    return _.map(_.range(0, left), function(idx) {
+      return;
+    });
+  }
 });

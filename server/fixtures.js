@@ -1,27 +1,52 @@
 if (Dorms.find().count() === 0) {
   Dorms.insert({
-    name: 'Unit_1',
-    spaced_name: 'Unit 1'
+    name: 'Pardee_Tower',
+    spaced_name: 'Pardee Tower'
   });
   
   Dorms.insert({
-    name: 'Unit_2',
-    spaced_name: 'Unit 2'
+    name: 'Marks_Hall',
+    spaced_name: 'Marks Hall'
   });
 
   Dorms.insert({
-    name: 'Unit_3',
-    spaced_name: 'Unit 3'
+    name: 'Marks_Tower',
+    spaced_name: 'Marks Tower'
   });
 
   Dorms.insert({
-    name: 'Clark_Kerr',
-    spaced_name: 'Clark Kerr'
+    name: 'Trojan_Hall',
+    spaced_name: 'Trojan Hall'
   });
 
   Dorms.insert({
-    name: 'Foothill',
-    spaced_name: 'Foothill'
+    name: 'Birnkrant',
+    spaced_name: 'Birnkrant'
+  });
+
+  Dorms.insert({
+    name: 'New_North',
+    spaced_name: 'New North'
+  });
+
+  Dorms.insert({
+    name: 'Parkside_Arts_and_Humanities',
+    spaced_name: 'Parkside Arts and Humanities'
+  });
+
+  Dorms.insert({
+    name: 'Parkside_IRC',
+    spaced_name: 'Parkside IRC'
+  });
+
+  Dorms.insert({
+    name: 'Fluor_Tower',
+    spaced_name: 'Fluor Tower'
+  });
+
+  Dorms.insert({
+    name: 'Webb_Tower',
+    spaced_name: 'Webb Tower'
   });
 }
 

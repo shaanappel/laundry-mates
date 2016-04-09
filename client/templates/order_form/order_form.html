@@ -12,16 +12,9 @@
     		<label for="last_name">Last Name:</label>
     		<input type="text" class="form-control" id="last_name" name="last_name" value="{{storedOrder 'order_last_name'}}" required autofocus>
   		</div>
-	  	<p>Clothing Type:</p>
-	  	<input type="text" id="clothing_type" name="clothing_type" value="{{storedOrder 'order_clothing_type'}}" required autofocus>
-	  	<p>Gender preference for washer: </p>
-	  	<select class="form-control" id="gender" name="gender" placeholder="Select your Gender">
-	  				{{#if storedOrder 'order_gender'}}
-		    			<option value= "{{storedOrder 'order_gender'}}">{{storedOrder 'order_gender'}}</option>
-		    		{{/if}}
-		    		<option value= "male">Male</option>
-		    		<option value= "female">Female</option> 
-				</select>
+	  	<!--<p>Clothing Type:</p>
+	  	<input type="text" id="clothing_type" name="clothing_type" value="{{storedOrder 'order_clothing_type'}}" required autofocus>-->
+	  	
 	  	<div class="form-group">
 	  	   <label for="select_dorm">Select a Dorm</label>
 		   <select class="form-control" id="select-a-dorm" name="select-a-dorm" placeholder="Select a Different dorm" required>
@@ -29,7 +22,9 @@
 		   			<option value= {{storedOrder 'order_dorm'}}>{{order_spaced_name}}</option>
 		   		{{/if}}
 				{{#each allDorms}}
-	    			<option value= {{name}}>{{spaced_name}}</option>
+					{{#if notSelectedDorm}}
+	    				<option value= {{name}}>{{spaced_name}}</option>
+	    			{{/if}}
 				{{/each}}
 			</select>
 		</div>
