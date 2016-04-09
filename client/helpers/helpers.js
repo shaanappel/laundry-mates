@@ -40,8 +40,18 @@ Template.registerHelper('allDorms', function() {
 });
 
 Template.registerHelper('notSelectedDorm', function() {
+    var session_stored = Session.get('order_dorm');
+    var user_param = 'dorm';
+
+    if (session_stored) {
+      var dorm = session_stored;
+    } else if (Meteor.user()) {
+      var dorm = Meteor.user().profile[user_param];
+    } else {
+      var dorm = null;
+    }
+
     var option_dorm = this.name;
-    var dorm = Session.get('order_dorm');
     return dorm != option_dorm;
 });
 
