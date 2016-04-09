@@ -1,2 +1,2 @@
-# thoughtlounge
+# LaundryMates
 
