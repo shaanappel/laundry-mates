@@ -54,3 +54,4 @@ Template.pay.events({
         return false;
     }
 });
+

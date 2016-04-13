@@ -93,6 +93,9 @@ sub {
 img {
   border: 0;
 }
+.img-circle{
+  width: 40%;
+}
 svg:not(:root) {
   overflow: hidden;
 }
