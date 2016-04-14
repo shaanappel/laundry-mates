@@ -1,0 +1,30 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'npm@latest-2' ]
+2 info using npm@2.14.20
+3 info using node@v4.4.0
+4 verbose stack Error: Cannot find module 'has-unicode'
+4 verbose stack     at Function.Module._resolveFilename (module.js:325:15)
+4 verbose stack     at Function.Module._load (module.js:276:25)
+4 verbose stack     at Module.require (module.js:353:17)
+4 verbose stack     at require (internal/module.js:12:17)
+4 verbose stack     at Object.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-install-checks/node_modules/npmlog/node_modules/gauge/progress-bar.js:2:18)
+4 verbose stack     at Module._compile (module.js:409:26)
+4 verbose stack     at Object.Module._extensions..js (module.js:416:10)
+4 verbose stack     at Module.load (module.js:343:32)
+4 verbose stack     at Function.Module._load (module.js:300:12)
+4 verbose stack     at Module.require (module.js:353:17)
+4 verbose stack     at require (internal/module.js:12:17)
+5 verbose cwd /Users/shaanappel/Documents/Meteor/laundry-mates
+6 error Darwin 15.3.0
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "npm@latest-2"
+8 error node v4.4.0
+9 error npm  v2.14.20
+10 error code MODULE_NOT_FOUND
+11 error Cannot find module 'has-unicode'
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
